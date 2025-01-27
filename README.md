@@ -5,6 +5,11 @@ I am running the project with roadrunner binaries. after downloading the binarie
 
 ``` ./rr serve comand ```
 
+###I have redefine the relations to remove duplicate columns for foreign keys
+
+``` Migrations are updated and each file has it's own Migration    ```
+
+
 ## Initial SQL Queries (Seeds)
 
 ### 1. Monthly Sales by Region
@@ -42,8 +47,6 @@ GROUP BY
     store_id, category_id;
 ```
 
----
-
 ## Challenges with Initial Queries
 
 1. **Table Scans**
@@ -59,7 +62,6 @@ GROUP BY
 4. **Data Growth**
    - Increased data size exponentially impacts query performance.
 
----
 
 ## Schema Modifications
 
@@ -113,7 +115,6 @@ ON DUPLICATE KEY UPDATE
     number_of_orders = VALUES(number_of_orders);
 ```
 
----
 
 ## Optimized Queries
 
@@ -161,7 +162,6 @@ ORDER BY
     store_id, rank_within_store;
 ```
 
----
 
 ## Steps Taken to Optimize
 
@@ -180,8 +180,3 @@ ORDER BY
 
 4. **Scalability Testing**
    - Ensured performance stability with a 2x data growth using indexes and summary tables.
-
----
-
-## Conclusion
-By addressing bottlenecks with schema modifications and query optimizations, the performance of report queries in MySQL 8.0 can be significantly enhanced. This approach ensures scalability and efficiency for growing datasets.
